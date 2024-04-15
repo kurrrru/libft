@@ -13,6 +13,8 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <stdlib.h>
+
 typedef unsigned long	t_size_t;
 
 # define _SIZE sizeof(t_size_t)
@@ -46,6 +48,7 @@ int			ft_tolower(int c);
 int			ft_toupper(int c);
 
 void		*ft_calloc(t_size_t count, t_size_t size);
+char		*ft_strdup(const char *s1);
 
 // additional functions
 
