@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 13:04:36 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/04/22 17:17:17 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/04/22 20:19:17 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,9 +63,9 @@ char	**ft_split(const char *s, char c)
 		cnt += (s[i - 1] == c && s[i] != c);
 	ret = (char **)malloc((cnt + 1) * sizeof(char *));
 	if (!ret)
-		return ((void *)0);
-	ret[cnt] = (void *)0;
+		return (NULL);
+	ret[cnt] = NULL;
 	if (!split_fill(ret, cnt, s, c))
-		return ((void *)0);
+		return (NULL);
 	return (ret);
 }

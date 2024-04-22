@@ -19,13 +19,13 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t	i;
 
 	if (!s || !f)
-		return ((void *)0);
+		return (NULL);
 	l = 0ul;
 	while (s[l] != '\0')
 		l++;
 	ret = (char *)malloc((l + 1) * sizeof(char));
 	if (!ret)
-		return ((void *)0);
+		return (NULL);
 	i = 0ul;
 	while (i < l)
 	{

@@ -16,7 +16,7 @@ char	*ft_strrchr(const char *s, int c)
 {
 	char	*ret;
 
-	ret = (void *)0;
+	ret = NULL;
 	while (*s)
 	{
 		if (*s == (char)c)

@@ -18,7 +18,7 @@ char	*ft_itoa(int n)
 	size_t	l;
 	int		i;
 
-	l = (size_t)((n < 0) + 1);
+	l = ((n < 0) + 1);
 	if (n > 0)
 		n = -n;
 	i = 1;
@@ -26,7 +26,7 @@ char	*ft_itoa(int n)
 		i *= 10;
 	ret = (char *)malloc((l + 1) * sizeof(char));
 	if (!ret)
-		return ((void *)0);
+		return (NULL);
 	ret[0] = '-';
 	ret[l] = '\0';
 	if (n == 0)
