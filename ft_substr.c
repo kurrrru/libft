@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 23:26:23 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/04/19 01:41:08 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/04/22 17:35:26 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (!s)
 		return ((void *)0);
-	l = 0ul;
+	l = 0;
 	while (s[l] != '\0')
 		l++;
 	if (len < l - start)
@@ -31,7 +31,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		ret = (char *)malloc(1);
 	if (!ret)
 		return ((void *)0);
-	i = 0ul;
+	i = 0;
 	while (i < len && i + start < l)
 	{
 		ret[i] = s[start + i];

@@ -18,7 +18,7 @@ char	*ft_itoa(int n)
 	size_t	l;
 	int		i;
 
-	l = (n < 0) + 1;
+	l = (size_t)((n < 0) + 1);
 	if (n > 0)
 		n = -n;
 	i = 1;

@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 23:44:26 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/04/18 23:46:56 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/04/22 17:36:04 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_putstr_fd(char *s, int fd)
 
 	if (!s)
 		return ;
-	i = 0ul;
+	i = 0;
 	while (s[i] != '\0')
 		i++;
 	write(fd, s, i);
