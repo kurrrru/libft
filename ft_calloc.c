@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 23:11:59 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/04/18 23:20:51 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/04/19 01:16:21 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_calloc(size_t count, size_t size)
 	void		*ret;
 	size_t		i;
 
-	if (size > 0 && count > SIZE_MAX / size)
+	if (size > 0 && count > 0xfffffffful / size)
 		return ((void *)0);
 	ret = malloc(count * size);
 	if (!ret)
