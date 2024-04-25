@@ -8,7 +8,7 @@ SRCS		=	ft_atoi.c		ft_memchr.c 	ft_split.c		ft_strncmp.c \
 				ft_isprint.c	ft_putnbr_fd.c	ft_strlen.c \
 				ft_itoa.c		ft_putstr_fd.c	ft_strmapi.c
 BONUS_SRCS	=	ft_lstadd_back_bonus.c  ft_lstlast_bonus.c \
-				ft_lstadd_front_bonus.c ft_lstmp_bonus.c \
+				ft_lstadd_front_bonus.c ft_lstmap_bonus.c \
 				ft_lstclear_bonus.c     ft_lstnew_bonus.c \
 				ft_lstdelone_bonus.c    ft_lstsize_bonus.c \
 				ft_lstiter_bonus.c
@@ -36,7 +36,7 @@ re: fclean all
 
 all: $(OBJS) $(NAME) 
 
-bonus: all $(BONUS_OBJS)
+bonus: $(OBJS) $(BONUS_OBJS)
 	ar rcs $(NAME) $(BONUS_OBJS) $(OBJS)
 
 

@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 23:31:48 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/04/22 23:41:45 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/04/25 19:40:59 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_lstsize(t_list *lst)
 	size = 0;
 	while (tmp)
 	{
-		tmp =tmp->next;
+		tmp = tmp->next;
 		size++;
 	}
 	return (size);

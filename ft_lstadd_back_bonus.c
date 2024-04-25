@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 23:21:14 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/04/22 23:47:59 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/04/25 18:23:04 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	if (!lst || !*lst)
+	if (!lst)
 		return ;
-	while ((*lst)->next)
-		*lst = (*lst)->next;
-	(*lst)->next = new;
+	while (*lst)
+		lst = &((*lst)->next);
+	*lst = new;
 }

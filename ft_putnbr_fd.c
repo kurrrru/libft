@@ -14,26 +14,19 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	c;
-	int		pow_10;
-	int		flag;
+		char	memo[12];
+	int		i;
+	int		sign;
 
-	if (n == -2147483648)
-		return ((void)write(fd, "-2147483648", 11));
-	if (n < 0)
+	sign = (n >= 0) * 2 - 1;
+	ft_memset(memo, '-', 10);
+	memo[11] = '\0';
+	memo[10] = n % 10 * sign + '0';
+	i = 10;
+	while (n <= -10 || n >= 10)
 	{
-		write(fd, "-", 1);
-		n *= -1;
+		n /= 10;
+		memo[--i] = n % 10 * sign + '0';
 	}
-	pow_10 = 1000000000;
-	flag = 0;
-	while (pow_10 > 0)
-	{
-		c = n / pow_10 + '0';
-		flag |= (c != '0');
-		if (flag || pow_10 == 1)
-			write(fd, &c, 1);
-		n %= pow_10;
-		pow_10 /= 10;
-	}
+	ft_putstr_fd(memo + i - (n < 0), fd);
 }

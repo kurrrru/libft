@@ -22,20 +22,17 @@ int	ft_atoi(const char *str)
 
 	ret = 0l;
 	sign = 1l;
-	while (*str == '\t' || *str == '\n' || *str == '\v' || *str == '\f'
-		|| *str == '\r' || *str == ' ')
+	while ((9 <= *str && *str <= 13) || *str == ' ')
 		str++;
 	if (*str == '-' || *str == '+')
 		if (*str++ == '-')
 			sign = -1l;
-	while ('0' <= *str && *str <= '9')
+	while (ft_isdigit(*str))
 	{
-		if (ret > 922337203685477580l || (ret == 922337203685477580l
-				&& *str > '7'))
-			return (-1);
-		if (ret < -922337203685477580l || (ret == -922337203685477580l
-				&& *str > '8'))
-			return (0);
+		if (ret > LONG_MAX / 10 || (ret == LONG_MAX / 10 && *str > '7'))
+			return ((int)LONG_MAX);
+		if (ret < LONG_MIN / 10 || (ret == LONG_MIN / 10 && *str > '8'))
+			return ((int)LONG_MIN);
 		ret = ret * 10l + (*str++ - '0') * sign;
 	}
 	return ((int)ret);

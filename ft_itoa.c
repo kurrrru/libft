@@ -14,27 +14,19 @@
 
 char	*ft_itoa(int n)
 {
-	char	*ret;
-	size_t	l;
+	char	memo[12];
 	int		i;
+	int		sign;
 
-	l = ((n < 0) + 1);
-	if (n > 0)
-		n = -n;
-	i = 1;
-	while (n / i <= -10 && l++ && i < 1000000000)
-		i *= 10;
-	ret = (char *)malloc((l + 1) * sizeof(char));
-	if (!ret)
-		return (NULL);
-	ret[0] = '-';
-	ret[l] = '\0';
-	if (n == 0)
-		ret[0] = '0';
-	while (n < 0)
+	sign = (n >= 0) * 2 - 1;
+	ft_memset(memo, '-', 10);
+	memo[11] = '\0';
+	memo[10] = n % 10 * sign + '0';
+	i = 10;
+	while (n <= -10 || n >= 10)
 	{
-		ret[--l] = -(n % 10) + '0';
 		n /= 10;
+		memo[--i] = n % 10 * sign + '0';
 	}
-	return (ret);
+	return (ft_strdup(memo + i - (n < 0)));
 }
