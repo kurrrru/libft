@@ -21,12 +21,12 @@ CFLAG		=	-Wall -Wextra -Werror
 
 .DEFAULT_GOAL := all
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) $(BONUS_OBJS)
 	ar rcs $(NAME) $(OBJS)
 
 $(BONUS_NAME): $(BONUS_OBJS) $(NAME)
-	ar rcs $(BONUS_NAME) $(BONUS_OBJS)
-	ar rcs $(NAME) $(NAME) $(BONUS_NAME)
+	ar rcs $(BONUS_NAME) $(BONUS_OBJS) $(OBJS)
+	ar rcs $(NAME) $(BONUS_OBJS) $(OBJS)
 
 %.o: %.c
 	$(CC) $(CFLAG) -c $< -o $@

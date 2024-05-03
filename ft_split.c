@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 13:04:36 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/04/25 23:44:10 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/05/03 17:52:02 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static int	split_fill(char **ret, int cnt, const char *s, char c)
 	pos = 0;
 	while (++block < cnt)
 	{
-		while (s[pos] == c)
+		while (s[pos] == c && s[pos] != '\0')
 			pos++;
 		s = s + pos;
 		pos = 0;
@@ -57,9 +57,11 @@ char	**ft_split(const char *s, char c)
 	int		i;
 	char	**ret;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	cnt = (s[0] != c && s[0] != '\0');
-	while (s[++i] != '\0')
+	while (s[0] != '\0' && s[++i] != '\0')
 		cnt += (s[i - 1] == c && s[i] != c);
 	ret = (char **)malloc((cnt + 1) * sizeof(char *));
 	if (!ret)
