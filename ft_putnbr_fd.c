@@ -14,7 +14,7 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-		char	memo[12];
+	char	memo[12];
 	int		i;
 	int		sign;
 
