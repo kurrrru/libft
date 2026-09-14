@@ -27,7 +27,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (*s1 && sep[(int)*s1])
 		s1++;
 	len = ft_strlen(s1);
-	while (len > 0 &&  sep[(int)s1[--len]])
+	while (len > 0 && sep[(int)s1[--len]])
 		;
 	return (ft_substr(s1, 0, len + 1));
 }
